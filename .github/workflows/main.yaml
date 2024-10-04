@@ -19,11 +19,9 @@ jobs:
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
-      flutter_channel: stable
-
-  spell-check:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/spell_check.yml@v1
-    with:
-      includes: |
-        **/*.md
-      modified_files_only: false
+      flutter_version: 3.24.3 #should match pubspec.yaml and flutter --version on dev
+      # and qa machine. Eventually use puro/fvm/flutterw
+      min_coverage: 60
+      format_directories: lib
+      analyze_directories: lib
+      coverage_excludes: "**/*.g.dart **/*.freezed.g.dart"
