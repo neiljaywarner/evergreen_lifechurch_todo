@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'firebase_options_dev.dart';
 import 'package:flutter/widgets.dart';
 
@@ -16,19 +17,9 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await FirebaseAnalytics.instance.logAppOpen();
-  await FirebaseAuth.instance.signInAnonymously();
-// Create a new user with a first and last name
-  final user = <String, dynamic>{
-    "first": "Ada",
-    "last": "Lovelace",
-    "born": 1815
-  };
-
-// Add a new document with a generated ID
-  var db = FirebaseFirestore.instance;
-  db.collection("users").add(user).then((DocumentReference doc) =>
-      print('DocumentSnapshot added with ID: ${doc.id}'));
+  final fcmToken = await FirebaseMessaging.instance.getToken();
+  debugPrint('fcm token below');
+  debugPrint(fcmToken);
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
