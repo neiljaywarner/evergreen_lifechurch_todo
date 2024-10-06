@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "828696899752",
+    "project_id": "evergreen-lifechurch-todo-dev",
+    "storage_bucket": "evergreen-lifechurch-todo-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828696899752:android:f02172a42a03e2c4bb129d",
+        "android_client_info": {
+          "package_name": "com.neiljaywarner.evergreen_lifechurch_todo.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABlOAoL1yjAQkujX0_b4VohwmhbVPGlPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
