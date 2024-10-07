@@ -6,10 +6,8 @@ class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp.router(
+  Widget build(BuildContext context, WidgetRef ref) => MaterialApp.router(
       routerConfig: ref.watch(goRouterProvider),
       debugShowCheckedModeBanner: false,
     );
-  }
 }

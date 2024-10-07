@@ -1,11 +1,9 @@
 import 'package:evergreen_lifechurch_todo/features/authentication/data/firebase_auth_repository.dart';
-import 'package:evergreen_lifechurch_todo/features/authentication/presentation/custom_profile_screen.dart';
-import 'package:evergreen_lifechurch_todo/features/authentication/presentation/custom_sign_in_screen.dart';
 import 'package:evergreen_lifechurch_todo/features/todos/todos_screen.dart';
 import 'package:evergreen_lifechurch_todo/routing/app_startup.dart';
 import 'package:evergreen_lifechurch_todo/routing/go_router_refresh_stream.dart';
-import 'package:evergreen_lifechurch_todo/routing/not_found_screen.dart';
 import 'package:evergreen_lifechurch_todo/routing/scaffold_with_nested_navigation.dart';
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -78,8 +76,8 @@ GoRouter goRouter(GoRouterRef ref) {
       GoRoute(
         path: AppRoute.signIn.path,
         name: AppRoute.signIn.name,
-        pageBuilder: (context, state) => const NoTransitionPage(
-          child: CustomSignInScreen(),
+        pageBuilder: (context, state) => NoTransitionPage(
+          child: SignInScreen(providers: [EmailAuthProvider()],),
         ),
       ),
       // Stateful navigation based on:
@@ -117,7 +115,7 @@ GoRouter goRouter(GoRouterRef ref) {
                 path: AppRoute.profile.path,
                 name: AppRoute.profile.name,
                 pageBuilder: (_, __) => const NoTransitionPage(
-                  child: CustomProfileScreen(),
+                  child: ProfileScreen(),
                 ),
               ),
             ],
@@ -125,8 +123,5 @@ GoRouter goRouter(GoRouterRef ref) {
         ],
       ),
     ],
-    errorPageBuilder: (_, __) => const NoTransitionPage(
-      child: NotFoundScreen(),
-    ),
   );
 }

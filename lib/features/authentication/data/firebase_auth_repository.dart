@@ -10,22 +10,15 @@ class AuthRepository {
   Stream<User?> authStateChanges() => _auth.authStateChanges();
   User? get currentUser => _auth.currentUser;
 
-  Future<void> signInAnonymously() {
-    return _auth.signInAnonymously();
-  }
 }
 
 @Riverpod(keepAlive: true)
-FirebaseAuth firebaseAuth(FirebaseAuthRef ref) {
-  return FirebaseAuth.instance;
-}
+FirebaseAuth firebaseAuth(FirebaseAuthRef ref) => FirebaseAuth.instance;
 
 @Riverpod(keepAlive: true)
-AuthRepository authRepository(AuthRepositoryRef ref) {
-  return AuthRepository(ref.watch(firebaseAuthProvider));
-}
+AuthRepository authRepository(AuthRepositoryRef ref)
+  => AuthRepository(ref.watch(firebaseAuthProvider));
 
 @riverpod
-Stream<User?> authStateChanges(AuthStateChangesRef ref) {
-  return ref.watch(authRepositoryProvider).authStateChanges();
-}
+Stream<User?> authStateChanges(AuthStateChangesRef ref)
+  => ref.watch(authRepositoryProvider).authStateChanges();

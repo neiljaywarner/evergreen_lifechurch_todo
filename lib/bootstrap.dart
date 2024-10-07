@@ -37,13 +37,11 @@ void registerErrorHandlers() {
     return true;
   };
   // * Show some error UI when any widget in the app fails to build
-  ErrorWidget.builder = (FlutterErrorDetails details) {
-    return Scaffold(
+  ErrorWidget.builder = (FlutterErrorDetails details) => Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
         title: Text('An error occurred'.hardcoded),
       ),
       body: Center(child: Text(details.toString())),
     );
-  };
 }
