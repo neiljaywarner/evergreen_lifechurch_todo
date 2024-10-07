@@ -1,5 +1,5 @@
 import 'package:evergreen_lifechurch_todo/features/authentication/data/firebase_auth_repository.dart';
-import 'package:evergreen_lifechurch_todo/features/todos/todos_screen.dart';
+import 'package:evergreen_lifechurch_todo/features/tasks/tasks_screen.dart';
 import 'package:evergreen_lifechurch_todo/routing/app_startup.dart';
 import 'package:evergreen_lifechurch_todo/routing/go_router_refresh_stream.dart';
 import 'package:evergreen_lifechurch_todo/routing/scaffold_with_nested_navigation.dart';
@@ -12,14 +12,14 @@ part 'app_router.g.dart';
 
 // private navigators
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
-final _todosNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'todos');
+final _tasksNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'tasks');
 final _accountNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'account');
 final _settingsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'settings');
 
 enum AppRoute {
   startup('/startup'),
   signIn('/signIn'),
-  todos('/todos'),
+  tasks('/tasks'),
   profile('/profile'),
   settings('/settings');
 
@@ -47,11 +47,11 @@ GoRouter goRouter(GoRouterRef ref) {
       if (isLoggedIn) {
         if (path.startsWith(AppRoute.startup.path) ||
             path.startsWith(AppRoute.signIn.path)) {
-          return AppRoute.todos.path;
+          return AppRoute.tasks.path;
         }
       } else {
         if (path.startsWith(AppRoute.startup.path) ||
-            path.startsWith(AppRoute.todos.path) ||
+            path.startsWith(AppRoute.tasks.path) ||
             // also comments ||
             path.startsWith(AppRoute.profile.path) ||
             path.startsWith(AppRoute.settings.path)) {
@@ -89,13 +89,13 @@ GoRouter goRouter(GoRouterRef ref) {
         ),
         branches: [
           StatefulShellBranch(
-            navigatorKey: _todosNavigatorKey,
+            navigatorKey: _tasksNavigatorKey,
             routes: [
               GoRoute(
-                path: AppRoute.todos.path,
-                name: AppRoute.todos.name,
+                path: AppRoute.tasks.path,
+                name: AppRoute.tasks.name,
                 pageBuilder: (_, __) => const NoTransitionPage(
-                  child: TodosScreen(),
+                  child: TasksScreen(),
                 ),
               ),
             ],
