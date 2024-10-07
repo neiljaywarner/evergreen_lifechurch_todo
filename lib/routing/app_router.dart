@@ -26,7 +26,6 @@ enum AppRoute {
   const AppRoute(this.path);
 
   final String path;
-
 }
 
 @riverpod
@@ -77,7 +76,9 @@ GoRouter goRouter(GoRouterRef ref) {
         path: AppRoute.signIn.path,
         name: AppRoute.signIn.name,
         pageBuilder: (context, state) => NoTransitionPage(
-          child: SignInScreen(providers: [EmailAuthProvider()],),
+          child: SignInScreen(
+            providers: [EmailAuthProvider()],
+          ),
         ),
       ),
       // Stateful navigation based on:
@@ -87,20 +88,29 @@ GoRouter goRouter(GoRouterRef ref) {
           child: ScaffoldWithNestedNavigation(navigationShell: navigationShell),
         ),
         branches: [
-          StatefulShellBranch(navigatorKey: _todosNavigatorKey,
+          StatefulShellBranch(
+            navigatorKey: _todosNavigatorKey,
             routes: [
-              GoRoute(path: AppRoute.todos.path, name: AppRoute.todos.name,
+              GoRoute(
+                path: AppRoute.todos.path,
+                name: AppRoute.todos.name,
                 pageBuilder: (_, __) => const NoTransitionPage(
                   child: TodosScreen(),
                 ),
               ),
             ],
           ),
-          StatefulShellBranch(navigatorKey: _settingsNavigatorKey,
+          StatefulShellBranch(
+            navigatorKey: _settingsNavigatorKey,
             routes: [
-              GoRoute(path: AppRoute.settings.path, name: AppRoute.settings.name,
+              GoRoute(
+                path: AppRoute.settings.path,
+                name: AppRoute.settings.name,
                 pageBuilder: (_, __) => const NoTransitionPage(
-                  child: Scaffold(body:Center(child: Text('Settings'),)),
+                  child: Scaffold(
+                      body: Center(
+                    child: Text('Settings'),
+                  )),
                 ),
               ),
             ],

@@ -8,6 +8,7 @@ class SegmentedControl<T extends Object> extends StatelessWidget {
     required this.children,
     required this.onValueChanged,
   });
+
   final Widget header;
   final T value;
   final Map<T, Widget> children;

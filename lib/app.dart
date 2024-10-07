@@ -7,7 +7,7 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) => MaterialApp.router(
-      routerConfig: ref.watch(goRouterProvider),
-      debugShowCheckedModeBanner: false,
-    );
+        routerConfig: ref.watch(goRouterProvider),
+        debugShowCheckedModeBanner: false,
+      );
 }

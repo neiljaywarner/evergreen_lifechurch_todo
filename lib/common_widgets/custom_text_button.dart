@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton(
       {super.key, required this.text, this.style, this.onPressed});
+
   final String text;
   final TextStyle? style;
   final VoidCallback? onPressed;

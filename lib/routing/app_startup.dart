@@ -20,6 +20,7 @@ Future<void> appStartup(AppStartupRef ref) async {
 /// Widget class to manage asynchronous app initialization
 class AppStartupWidget extends ConsumerWidget {
   const AppStartupWidget({super.key, required this.onLoaded});
+
   final WidgetBuilder onLoaded;
 
   @override
@@ -53,6 +54,7 @@ class AppStartupLoadingWidget extends StatelessWidget {
 class AppStartupErrorWidget extends StatelessWidget {
   const AppStartupErrorWidget(
       {super.key, required this.message, required this.onRetry});
+
   final String message;
   final VoidCallback onRetry;
 

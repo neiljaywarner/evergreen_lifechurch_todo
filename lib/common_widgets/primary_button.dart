@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:evergreen_lifechurch_todo/constants/app_sizes.dart';
+import 'package:flutter/material.dart';
 
 /// Primary button based on [ElevatedButton].
 /// Useful for CTAs in the app.
@@ -10,9 +10,11 @@ import 'package:evergreen_lifechurch_todo/constants/app_sizes.dart';
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton(
       {super.key, required this.text, this.isLoading = false, this.onPressed});
+
   final String text;
   final bool isLoading;
   final VoidCallback? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(

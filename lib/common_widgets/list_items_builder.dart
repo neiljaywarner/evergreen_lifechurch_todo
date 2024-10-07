@@ -1,6 +1,6 @@
+import 'package:evergreen_lifechurch_todo/common_widgets/empty_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:evergreen_lifechurch_todo/common_widgets/empty_content.dart';
 
 typedef ItemWidgetBuilder<T> = Widget Function(BuildContext context, T item);
 
@@ -10,6 +10,7 @@ class ListItemsBuilder<T> extends StatelessWidget {
     required this.data,
     required this.itemBuilder,
   });
+
   final AsyncValue<List<T>> data;
   final ItemWidgetBuilder<T> itemBuilder;
 

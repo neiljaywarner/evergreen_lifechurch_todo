@@ -20,6 +20,7 @@ final firebaseAuthProvider = Provider<FirebaseAuth>.internal(
 );
 
 typedef FirebaseAuthRef = ProviderRef<FirebaseAuth>;
+
 String _$authRepositoryHash() => r'3871275ded2762a0e529629be71e890bfd3bd7ad';
 
 /// See also [authRepository].
@@ -35,6 +36,7 @@ final authRepositoryProvider = Provider<AuthRepository>.internal(
 );
 
 typedef AuthRepositoryRef = ProviderRef<AuthRepository>;
+
 String _$authStateChangesHash() => r'af0a0185c59bf3c1ad8a9e041075517b3a2dcc31';
 
 /// See also [authStateChanges].

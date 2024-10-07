@@ -9,7 +9,6 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   // Note: google-services.json and firebase_options_dev.dart
   // ok to add to public repo per docs.
@@ -20,9 +19,11 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   debugPrint(fcmToken);
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   // * Entry point of the app
-  runApp(const ProviderScope(
-    child: MyApp(),
-  ),);
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 void registerErrorHandlers() {
@@ -38,10 +39,10 @@ void registerErrorHandlers() {
   };
   // * Show some error UI when any widget in the app fails to build
   ErrorWidget.builder = (FlutterErrorDetails details) => Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Text('An error occurred'.hardcoded),
-      ),
-      body: Center(child: Text(details.toString())),
-    );
+        appBar: AppBar(
+          backgroundColor: Colors.red,
+          title: Text('An error occurred'.hardcoded),
+        ),
+        body: Center(child: Text(details.toString())),
+      );
 }

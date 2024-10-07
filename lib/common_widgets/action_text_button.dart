@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 /// Text button to be used as an [AppBar] action
 class ActionTextButton extends StatelessWidget {
   const ActionTextButton({required this.text, super.key, this.onPressed});
+
   final String text;
   final VoidCallback? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
