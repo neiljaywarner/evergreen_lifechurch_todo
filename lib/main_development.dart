@@ -1,20 +1,17 @@
 import 'package:evergreen_lifechurch_todo/app/app.dart';
 import 'package:evergreen_lifechurch_todo/bootstrap.dart';
-import 'package:firebase_core/firebase_core.dart';
-
-import 'package:flutter/material.dart';
+import 'package:evergreen_lifechurch_todo/firebase_options_dev.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
-
-import 'firebase_options_dev.dart';
+import 'package:flutter/material.dart';
 
 Future<void> main() async {
- // bootstrap(() => const App());
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
+  await bootstrap(() => const App());
 }
 
 
