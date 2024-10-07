@@ -1,4 +1,3 @@
-import 'package:evergreen_lifechurch_todo/app/app.dart';
 import 'package:evergreen_lifechurch_todo/bootstrap.dart';
 import 'package:evergreen_lifechurch_todo/firebase_options_dev.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -9,5 +8,5 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await bootstrap(() => const App());
+  await bootstrap();
 }

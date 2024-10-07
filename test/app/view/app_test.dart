@@ -1,4 +1,4 @@
-import 'package:evergreen_lifechurch_todo/app/app.dart';
+import 'package:evergreen_lifechurch_todo/app.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
