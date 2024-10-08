@@ -7,10 +7,8 @@ import 'package:evergreen_lifechurch_todo/utils/format.dart';
 
 class DateTimePicker extends StatelessWidget {
   const DateTimePicker({
-    super.key,
-    required this.labelText,
-    required this.selectedDate,
-    required this.selectedTime,
+    required this.labelText, required this.selectedDate,
+    required this.selectedTime, super.key,
     this.onSelectedDate,
     this.onSelectedTime,
   });

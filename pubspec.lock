@@ -311,7 +311,7 @@ packages:
     source: hosted
     version: "2.1.17"
   equatable:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: equatable
       sha256: c2b87cb7756efdf69892005af546c56c0b5037f54d2a88269b4f347a505e3ca2
@@ -494,6 +494,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.16.0"
+  firebase_ui_firestore:
+    dependency: "direct main"
+    description:
+      name: firebase_ui_firestore
+      sha256: "9492b9f989457a05e21c47d006beb4cef09be1c56d0fe8df7158f9b056be63a9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.7.0"
   firebase_ui_localizations:
     dependency: transitive
     description:

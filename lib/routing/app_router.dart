@@ -1,5 +1,6 @@
 import 'package:evergreen_lifechurch_todo/features/authentication/data/firebase_auth_repository.dart';
-import 'package:evergreen_lifechurch_todo/features/tasks/tasks_screen.dart';
+import 'package:evergreen_lifechurch_todo/features/tasks/presentation/edit_task_screen/edit_task_screen.dart';
+import 'package:evergreen_lifechurch_todo/features/tasks/presentation/tasks_screen/tasks_screen.dart';
 import 'package:evergreen_lifechurch_todo/routing/app_startup.dart';
 import 'package:evergreen_lifechurch_todo/routing/go_router_refresh_stream.dart';
 import 'package:evergreen_lifechurch_todo/routing/scaffold_with_nested_navigation.dart';
@@ -20,6 +21,7 @@ enum AppRoute {
   startup('/startup'),
   signIn('/signIn'),
   tasks('/tasks'),
+  addTask('addTask'), // ie /tasks/add
   profile('/profile'),
   settings('/settings');
 
@@ -97,6 +99,17 @@ GoRouter goRouter(GoRouterRef ref) {
                 pageBuilder: (_, __) => const NoTransitionPage(
                   child: TasksScreen(),
                 ),
+                routes: [
+                  GoRoute(
+                    path: AppRoute.addTask.path,
+                    name: AppRoute.addTask.name,
+                    parentNavigatorKey: _rootNavigatorKey,
+                    pageBuilder: (_, __) => const MaterialPage(
+                        fullscreenDialog: true,
+                        child: EditTaskScreen(),
+                      ),
+                  ),
+                ]
               ),
             ],
           ),

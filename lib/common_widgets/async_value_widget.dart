@@ -18,7 +18,7 @@ class AsyncValueWidget<T> extends StatelessWidget {
 
 class ScaffoldAsyncValueWidget<T> extends StatelessWidget {
   const ScaffoldAsyncValueWidget(
-      {required this.value, required this.data, super.key});
+      {required this.value, required this.data, super.key,});
 
   final AsyncValue<T> value;
   final Widget Function(T) data;

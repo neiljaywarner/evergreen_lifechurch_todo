@@ -19,11 +19,8 @@ class Strings {
   // Home page
   static const String homePage = 'Home Page';
 
-  // Jobs page
-  static const String jobs = 'Jobs';
-
-  // Entries page
-  static const String entries = 'Entries';
+  // Tasks page
+  static const String tasks = 'Tasks';
 
   // Account page
   static const String account = 'Account';
